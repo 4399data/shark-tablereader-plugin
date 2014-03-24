@@ -14,10 +14,10 @@
 
 
   mapred.jdbc.sql.template中允许的标签：
-  1. {date} - Ymd格式的日期
-  2. {plat} - 平台标识
-  3. {timestart} - 日期对应的开始时间戳(秒)
-  4. {timeend} - 日期对应的结束时间戳(秒)
+  * {date} - Ymd格式的日期
+  * {plat} - 平台标识
+  * {timestart} - 日期对应的开始时间戳(秒)
+  * {timeend} - 日期对应的结束时间戳(秒)
 
   eg:
   建表
