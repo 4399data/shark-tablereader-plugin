@@ -1,0 +1,1 @@
+Get different rdd from tblproperties 'shark.table.reader.class'
