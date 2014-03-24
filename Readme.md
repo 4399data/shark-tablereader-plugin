@@ -1,7 +1,9 @@
 可以通过tblproperties中定义的shark.table.reader.class来获取不同的tablereader, 从而得到不同的rdd
 
 1. JdbcFlagTableReader
+
   shark.table.reader.class = shark.execution.JdbcFlagTableReader
+
   在tblproperties中指定好查询的sql，同时支持从配置中获取参数值，替换sql中预定的标签。
 
   允许的属性：
@@ -9,6 +11,7 @@
   2. mapred.jdbc.url - jdbc使用的url，得包含账号密码
   3. mapred.jdbc.sql.key - 查询sql获取最小/大的列名
   4. mapred.jdbc.sql.template - 查询使用到的sql模板，只能包含from子句和where子句
+
 
   mapred.jdbc.sql.template中允许的标签：
   1. {date} - Ymd格式的日期
@@ -18,6 +21,8 @@
 
   eg:
   建表
+<pre>
+<code>
   create external table xxoolog(
     recdate string,
     rectime int,
@@ -32,7 +37,13 @@
     'mapred.jdbc.sql.key' = 'rectime',
     'mapred.jdbc.sql.template' = 'test.xxoolog_{date}'
   )
+</code>
+</pre>
   查询
+<pre>
+<code>
   set mapred.jdbc.sql.args.date = 20140324;
   // 如果多个表查询，set mapred.jdbc.sql.args.default.xxoolog.date = 20140324;来控制某一张表的参数
   select * from xxoolog limit 10
+</code>
+</pre>
