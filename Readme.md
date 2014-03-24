@@ -31,7 +31,7 @@
   )
   stored by 'org.wso2.carbon.hadoop.hive.jdbc.storage.JDBCStorageHandler'
   tblproperties (
-    'shark.table.reader.class' = 'shark.execution/JdbcFlagTableReader',
+    'shark.table.reader.class' = 'shark.execution.JdbcFlagTableReader',
     'mapred.jdbc.driver.class' = 'com.mysql.jdbc.Driver',
     'mapred.jdbc.url' = 'jdbc:mysql://localhost/test?user=root&password=',
     'mapred.jdbc.sql.key' = 'rectime',
